@@ -107,4 +107,7 @@ class AuthorController extends Controller
             "data" => $author
         ]);
     }
+    public function search($name){
+        return Author::where('name', 'like', '%'.$name.'%')->get();
+    }
 }
